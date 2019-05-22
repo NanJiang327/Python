@@ -28,7 +28,8 @@ def strcount():
     print(target, ' 出现了', count, '次')
 
 
-print(result(2, 4, 6, 7))
-print('所有水仙花数分别是: ', end='')
-follower()
-strcount()
+
+# print(result(2, 4, 6, 7))
+# print('所有水仙花数分别是: ', end='')
+# follower()
+# strcount()
