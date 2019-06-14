@@ -15,3 +15,4 @@ def numtobim(num):
 
 
 def get_digits(n):
+    print('Digit is ', n)
