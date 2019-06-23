@@ -18,12 +18,12 @@ def register(request):
             # Check Username
             if User.objects.filter(username=username).exists():
                 messages.error(request, 'User is taken')
-                redirect('register')
+                return redirect('register')
             else:
                 # Check Email
                 if User.objects.filter(email=email).exists():
                     messages.error(request, 'The email is being used')
-                    redirect('register')
+                    return redirect('register')
                 else:
                     # Looks good
                     user = User.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name)
@@ -33,10 +33,10 @@ def register(request):
                     # return redirect('index')
                     user.save()
                     messages.success(request, 'You are now registered and can log in')
-                    redirect('login')
+                    return redirect('login')
         else:
             messages.error(request, 'Passwords do not match')
-            redirect('register')
+            return redirect('register')
     else:
         return render(request, 'account/register.html')
 
